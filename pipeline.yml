@@ -1,0 +1,29 @@
+---
+resources:
+- name: this-repo
+  type: git
+  source:
+    uri: jessicastenning/test-interpolation
+
+jobs:
+- name: interpolate-file
+  plan:
+  - get: csi-ci
+  - get: this-repo
+  - task: interpolate
+    config:
+      platform: linux
+      outputs:
+      - name: csv
+      image_resource:
+        type: docker-image
+        source:
+          repository: engineerbetter/csi-ci
+          tag: latest
+      run:
+        path: bash
+        args:
+          - -euc
+          - |
+            credhub interpolate -f this-pipeline/template.yml
+            cat this-pipeline/template.yml

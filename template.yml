@@ -1,0 +1,18 @@
+MONGO_SERVER: ((mongo_router_host))
+PORT: ((mongo_port))
+USERNAME: ((username))
+PASSWORD: ((password))
+AUTH: true
+MONGO_DB: ((mongodb))
+With_SSl: true
+COLLECTION_NAME: ((archive_metrics))
+LOCALDIR:
+lagTime: 10
+logFilelocation: ((local_log_file))
+offsetFileName: ((offsetfilename))
+IF_Using_S3_Bucket: true
+ACCESS_KEY_ID: ((access_key_id))
+ACCESS_SECRET_KEY: ((access_secret_key))
+BUCKET_NAME: ((bucket_name))
+Region_name: us-east-1
+signature_version: s3v4
