@@ -3,12 +3,11 @@ resources:
 - name: this-repo
   type: git
   source:
-    uri: jessicastenning/test-interpolation
+    uri: jessicastenning/test-interpolate
 
 jobs:
 - name: interpolate-file
   plan:
-  - get: csi-ci
   - get: this-repo
   - task: interpolate
     config:
